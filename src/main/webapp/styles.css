@@ -1,0 +1,86 @@
+*                   { margin: 0px; padding: 0px; }
+html				{ height: 100%; } 
+body                { font-family: Century Gothic,arial,sans-serif; font-size: 30px; background-color: #555; height: 100%;
+                      text-align: center; /* nodig om het block te centreren in IE */ }
+p, ul				{ margin-bottom: 10px; }
+hr					{ margin-top: 20px; margin-bottom: 20px; }
+
+a:link				{ color:#ff7900; }
+a:visited			{ color:#ff7900; }
+a:hover				{ color:#ff7900; }
+a:active			{ color:#ff7900; }
+
+.banner             { height: 160px; width: 50%; background-color: #fff; background-repeat: no-repeat; }
+.title              { font-weight: bold; font-size: 22px; }
+.subtitle           { font-weight: bold; font-size: 16px; }
+.legend				{ width: 50px; height: 40px; border: 1px solid black; text-align: center; }
+.calendar			{ width: 50%; float: left; min-height: 100%; margin-bottom: 30px; }
+.calendar table		{ margin-left: auto; margin-right: auto; }
+.calendar table,
+.calendar th,
+.calendar td		{ border: 1px solid black; }
+.calendar p			{ text-align: center; }
+.calendar th		{ width: 52px; text-align: center; vertical-align: middle; color: white; background-color: black; }
+.calendar td		{ height: 40px; text-align: left; vertical-align: top; }
+
+.feestdagen table	{ margin-left: 0px; margin-right: auto; }
+.feestdagen table,
+.feestdagen th,
+.feestdagen td		{ border: 1px solid black; }
+.feestdagen th		{ text-align: center; vertical-align: middle; color: white; background-color: black; padding: 5px; }
+.feestdagen td		{ text-align: left; vertical-align: top; padding: 5px; padding-right: 30px; }
+
+.we					{ background-color: #444; color: white; }
+.feest				{ background-color: #777; }
+.verlof, .brug		{ background-color: #d80000; color: white; }
+.bold				{ font-weight: bold; }
+.underline			{ text-decoration: underline; }
+
+#wrap               { margin: 0px auto; /* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina */ 
+                      min-height: 100%; width: 1000px; background-color: #f2ffbd; }
+                      
+#bannerLeft         { float: left; background-position: left; background-image: url('images/hoofdingLinks.jpg'); }
+#bannerRight        { float: right; background-position: right; background-image: url('images/hoofdingRechts.jpg'); }
+
+#fakeMenuBar        { clear: both; font-size: 12px; background-color: #ff7900; height: 30px; }
+#menuBar            { clear: both; }   
+#menuBar ul         { list-style: none; font-size: 14px; font-weight: bold; background-color: #ff7900; height: 30px; }
+#menuBar li      	{ position: relative; float: left; display: block; }
+#menuBar li a		{ color: white; 
+                      width: 135px; 
+                      height: 30px; 
+                      line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
+                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */ 
+                      text-decoration: none; text-align: center; 
+                      border-right-style: solid; border-width: 1px; border-color: #ffa95c; }
+/* #menuBar li:hover a, */
+#menuBar li a:hover	{ background-color: #ffc999; color: black; }
+
+/* Hide from IE5-Mac \*/
+#menuBar li a       { float: none }
+/* End hide */ 
+
+#menuBar li ul				{ position: absolute; top: 30px; display: none; width: 135px; height: auto; z-index: 2; background-color: #ff7900; }
+#menuBar li:hover ul		{ display: block; }
+#menuBar li:hover ul li a,
+#menuBar li ul li a 		{ border-right-style: none; border-top-style: solid; }
+#menuBar li ul li:hover a,
+#menuBar li ul li a:hover	{ background-color:#ffa95c; color:black; } 
+
+#content			{ padding: 20px 40px; text-align: left; font-size: 15px; display: block; }
+#content ul         { margin-left: 20px; }
+#content ul.sublist	{ margin-top: 5px; }
+#content li         { margin-bottom: 5px; }
+
+#foto				{ float: left; height: 150px; width: 150px; margin-right: 40px; margin-bottom: 40px; }
+#fotos				{ margin-top: 50px; height: 1000px; }
+#fotos a:link		{ color:#fff; }
+#fotos a:visited	{ color:#fff; }
+#fotos a:hover		{ color:#fff; }
+#fotos a:active		{ color:#fff; }
+
+/* #ilse				{ float: right; margin: auto; display: block; } */
+#ilse				{ float: right; margin-left: 20px; margin-bottom: 20px; }
+#zeppa				{ float: left; margin-right: 20px; }
+#kennismaking		{ margin-bottom: 50px; }
+#essentie			{ height: 420px; }
