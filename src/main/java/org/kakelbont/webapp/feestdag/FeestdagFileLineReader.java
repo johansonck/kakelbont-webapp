@@ -32,6 +32,12 @@ public class FeestdagFileLineReader {
 		return convertLine(line);
 	}
 
+	public void close() {
+		if (bufferedReader != null) {
+			IOUtils.closeQuietly(bufferedReader);
+		}
+	}
+
 	private List<Feestdag> convertLine(String line) {
 		String[] split = line.split(";");
 		if (split.length == 5) {
@@ -44,7 +50,7 @@ public class FeestdagFileLineReader {
 	}
 
 	private List<Feestdag> createDatesFromLongList(String[] strings) {
-		List<Feestdag> list = new ArrayList<Feestdag>(13);
+		List<Feestdag> list = new ArrayList<>(13);
 		
 		list.add(new Feestdag(Name.NIEUWJAAR, converter.toCalendar(strings[0])));
 		list.add(new Feestdag(Name.PASEN, converter.toCalendar(strings[1])));
@@ -64,7 +70,7 @@ public class FeestdagFileLineReader {
 	}
 
 	private List<Feestdag> createDatesFromShortList(String[] strings) {
-		List<Feestdag> list = new ArrayList<Feestdag>(13);
+		List<Feestdag> list = new ArrayList<>(13);
 		
 		int year = converter.toCalendar(strings[0]).get(Calendar.YEAR);
 		
@@ -93,11 +99,5 @@ public class FeestdagFileLineReader {
 		}
 		
 		return bufferedReader;
-	}
-	
-	public void close() {
-		if (bufferedReader != null) {
-			IOUtils.closeQuietly(bufferedReader);
-		}
 	}
 }
