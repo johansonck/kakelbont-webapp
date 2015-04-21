@@ -39,11 +39,10 @@ public class DayCodeGeneratorTest {
 	@Test
 	public void testNormalDayWithParent() throws Exception {
 		Calendar calendar = new GregorianCalendar(2011, Calendar.AUGUST, 29);
-		XmlElement parent = new XmlElement("test");
 		XmlElement actual = new DayCodeGenerator().generate(calendar, null);
-		
+
 		Assert.assertNotNull(actual);
-		Assert.assertEquals("<test><td>29</td></test>", parent.toString(false));
+		Assert.assertEquals("<td>29</td>", actual.toString(false));
 	}
 	
 	@Test
@@ -66,19 +65,19 @@ public class DayCodeGeneratorTest {
 	
 	@Test
 	public void testFeestdag() throws Exception {
-		Calendar calendar = new GregorianCalendar(2011, Calendar.AUGUST, 28);
+		Calendar calendar = new GregorianCalendar(2015, Calendar.APRIL, 21);
 		XmlElement actual = new DayCodeGenerator().generate(calendar, Style.FEESTDAG);
 		
 		Assert.assertNotNull(actual);
-		Assert.assertEquals("<td class=\"feest\">28</td>", actual.toString(false));
+		Assert.assertEquals("<td class=\"feest\">21</td>", actual.toString(false));
 	}
 	
 	@Test
 	public void testSluitingsdag() throws Exception {
-		Calendar calendar = new GregorianCalendar(2011, Calendar.AUGUST, 28);
+		Calendar calendar = new GregorianCalendar(2015, Calendar.APRIL, 21);
 		XmlElement actual = new DayCodeGenerator().generate(calendar, Style.SLUITINGSDAG);
 		
 		Assert.assertNotNull(actual);
-		Assert.assertEquals("<td class=\"verlof\">28</td>", actual.toString(false));
+		Assert.assertEquals("<td class=\"verlof\">21</td>", actual.toString(false));
 	}
 }
