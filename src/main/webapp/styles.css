@@ -1,7 +1,7 @@
 /*
    menu: #ff7900
    menu-hover: #ffc999
-   submenu-hover: #ffa95c
+   submenu-hover & menu dividers: #ffa95c
    zijkanten: #9C9C9C
    weekends: #444
    feestdagen: #777
@@ -48,22 +48,22 @@ a:active			{ color:#ff7900; }
 .underline			{ text-decoration: underline; }
 
 #wrap               { margin: 0px auto; /* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina */
-                      min-height: 100%; width: 1000px; background-color: #f2ffbd; }
+                      min-height: 100%; width: 1001px; background-color: #f2ffbd; }
                       
 #bannerLeft         { float: left; background-position: left; background-image: url('images/hoofdingLinks.jpg'); }
-#bannerRight        { float: right; background-position: right; background-image: url('images/hoofdingRechts.jpg'); }
 
 #fakeMenuBar        { clear: both; font-size: 12px; background-color: #ff7900; height: 30px; }
 #menuBar            { clear: both; }   
 #menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; }
 #menuBar li      	{ position: relative; float: left; display: block; }
-#menuBar li a		{ color: white; 
-                      width: 135px; 
+#menuBar li a		{ color: white;
+                      width: 166px;
                       height: 30px; 
                       line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
-                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */ 
-                      text-decoration: none; text-align: center; 
+                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
+                      text-decoration: none; text-align: center;
                       border-right-style: solid; border-width: 1px; border-color: #ffa95c; }
+#menuFotos a        { border-right-style: none !important; }
 /* #menuBar li:hover a, */
 #menuBar li a:hover	{ background-color: #ffc999; color: black; }
 
@@ -71,12 +71,12 @@ a:active			{ color:#ff7900; }
 #menuBar li a       { float: none }
 /* End hide */ 
 
-#menuBar li ul				{ position: absolute; top: 30px; display: none; width: 135px; height: auto; z-index: 2; background-color: #ff7900; }
-#menuBar li:hover ul		{ display: block; }
-#menuBar li:hover ul li a,
-#menuBar li ul li a 		{ border-right-style: none; border-top-style: solid; }
-#menuBar li ul li:hover a,
-#menuBar li ul li a:hover	{ background-color:#ffa95c; color:black; } 
+/*#menuBar li ul				{ position: absolute; top: 30px; display: none; width: 135px; height: auto; z-index: 2; background-color: #ff7900; }*/
+/*#menuBar li:hover ul		{ display: block; }*/
+/*#menuBar li:hover ul li a,*/
+/*#menuBar li ul li a 		{ border-right-style: none; border-top-style: solid; }*/
+/*#menuBar li ul li:hover a,*/
+/*#menuBar li ul li a:hover	{ background-color:#ffa95c; color:black; } */
 
 #content			{ padding: 20px 40px; text-align: left; font-size: 15px; display: block; }
 #content ul         { margin-left: 20px; }
