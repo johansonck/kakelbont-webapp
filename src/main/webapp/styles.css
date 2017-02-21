@@ -50,7 +50,7 @@ a:active			{ color:#ff7900; }
 #wrap               { margin: 0px auto; /* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina */
                       min-height: 100%; width: 1001px; background-color: #f2ffbd; }
 
-#bannerLeft         { float: left; background-position: left; background-image: url('images/hoofdingLinks.jpg'); background-size: contain; }
+#bannerLeft         { float: left; background-position: left; background-image: url('images/logo.jpg'); background-size: contain; }
 
 #fakeMenuBar        { clear: both; font-size: 12px; background-color: #ff7900; height: 30px; }
 #menuBar            { clear: both; }
@@ -71,13 +71,6 @@ a:active			{ color:#ff7900; }
 #menuBar li a       { float: none }
 /* End hide */
 
-/*#menuBar li ul				{ position: absolute; top: 30px; display: none; width: 135px; height: auto; z-index: 2; background-color: #ff7900; }*/
-/*#menuBar li:hover ul		{ display: block; }*/
-/*#menuBar li:hover ul li a,*/
-/*#menuBar li ul li a 		{ border-right-style: none; border-top-style: solid; }*/
-/*#menuBar li ul li:hover a,*/
-/*#menuBar li ul li a:hover	{ background-color:#ffa95c; color:black; } */
-
 #content			{ padding: 20px 40px; text-align: left; font-size: 15px; display: block; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
@@ -97,6 +90,6 @@ a:active			{ color:#ff7900; }
 #essentie			{ height: 420px; }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
 .banner             { height: 80px; }
 }
