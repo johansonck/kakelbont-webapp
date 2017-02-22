@@ -32,7 +32,7 @@ a:active			{ color:#ff7900; }
 #banner             { width: 100%; background-color: #fff; float: left; }
 #logo               { width: 50%; float: left; margin: 10px 10px; }
 
-.title { font-weight: bold; font-size: 22px; margin-top: 10px; }
+.title              { font-weight: bold; font-size: 22px; margin-top: 10px; }
 .subtitle           { font-weight: bold; font-size: 16px; }
 /*.legend				{ width: 50px; height: 40px; border: 1px solid black; text-align: center; }*/
 /*.calendar			{ width: 50%; float: left; min-height: 100%; margin-bottom: 30px; }*/
@@ -60,20 +60,20 @@ a:active			{ color:#ff7900; }
 /*#wrap               { margin: 0px auto; !* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina *!*/
                       /*min-height: 100%; max-width: 1001px; background-color: #f2ffbd; }*/
 
-#wrap               { margin: 0px auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
+#wrap               { margin: 0 auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
                       height: 100%; max-width: 1001px; background-color: #f2ffbd;
                       overflow: scroll;
                     }
 #menuBar            { clear: both; }
-#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; }
-#menuBar li      	{ position: relative; float: left; display: block; }
+#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0; }
+#menuBar li      	{ position: relative; float: left; display: block; width: 16.5%; }
 #menuBar li a		{ color: white;
-                      width: 166px;
                       height: 30px;
                       line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
                       display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
                       text-decoration: none; text-align: center;
-                      border-right-style: solid; border-width: 1px; border-color: #ffa95c; }
+                      border: 1px #ffa95c; border-right-style: solid;
+                    }
 #menuFotos a        { border-right-style: none !important; }
 #menuBar li a:hover	{ background-color: #ffc999; color: black; }
 
