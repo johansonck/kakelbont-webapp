@@ -29,17 +29,10 @@ a:visited			{ color:#ff7900; }
 a:hover				{ color:#ff7900; }
 a:active			{ color:#ff7900; }
 
-#banner             { height: 160px;
-                      width: 100%;
-                      background-color: #fff;
-                      background-repeat: no-repeat;
-                      float: left;
-                      background-position: left; ;
-                      background-image: url('images/logo.jpg');
-                      background-size: contain;
-                    }
+#banner             { width: 100%; background-color: #fff; float: left; }
+#logo               { width: 50%; float: left; margin: 10px 10px; }
 
-.title              { font-weight: bold; font-size: 22px; margin-top: 10px; }
+.title { font-weight: bold; font-size: 22px; margin-top: 10px; }
 .subtitle           { font-weight: bold; font-size: 16px; }
 /*.legend				{ width: 50px; height: 40px; border: 1px solid black; text-align: center; }*/
 /*.calendar			{ width: 50%; float: left; min-height: 100%; margin-bottom: 30px; }*/
@@ -106,10 +99,6 @@ a:active			{ color:#ff7900; }
 /*#essentie			{ height: 420px; }*/
 
 .row::after         { content: ""; clear: both; display: table; }
-
-@media only screen and (max-width: 600px) {
-#banner             { height: 80px; }
-}
 
 /* For mobile phones: */
 [class*="span-"] {
