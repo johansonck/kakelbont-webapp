@@ -1,0 +1,156 @@
+/*
+   menu: #ff7900
+   menu-hover: #ffc999
+   submenu-hover & menu dividers: #ffa95c
+   zijkanten: #9C9C9C
+   weekends: #444
+   feestdagen: #777
+   verlof: #d80000
+   achtergrond: #f2ffbd
+*/
+
+*                   { margin: 0px; /* zorgt ervoor dat de banner mooi aansluit met de bovenkant van de browser */
+                      box-sizing: border-box;
+                    }
+html, body          { height: 100%; }
+body                { font-family: Roboto,arial,sans-serif;
+                      background-color: #9C9C9C;  /* grijze zijranden */
+                      text-align: center; /* nodig om het block te centreren in IE */
+                    }
+p, ul				{ margin-bottom: 10px; }
+img 				{ margin: 10px auto;  /* top en bottom is 10px, left en right is auto wat zorgt voor centreren */
+                      display: block;
+                      width: 100%;
+                    }
+/*hr					{ margin-top: 20px; margin-bottom: 20px; }*/
+
+a:link				{ color:#ff7900; }
+a:visited			{ color:#ff7900; }
+a:hover				{ color:#ff7900; }
+a:active			{ color:#ff7900; }
+
+#banner             { height: 160px;
+                      width: 100%;
+                      background-color: #fff;
+                      background-repeat: no-repeat;
+                      float: left;
+                      background-position: left; ;
+                      background-image: url('images/logo.jpg');
+                      background-size: contain;
+                    }
+
+.title              { font-weight: bold; font-size: 22px; margin-top: 10px; }
+.subtitle           { font-weight: bold; font-size: 16px; }
+/*.legend				{ width: 50px; height: 40px; border: 1px solid black; text-align: center; }*/
+/*.calendar			{ width: 50%; float: left; min-height: 100%; margin-bottom: 30px; }*/
+/*.calendar table		{ margin-left: auto; margin-right: auto; }*/
+/*.calendar table,*/
+/*.calendar th,*/
+/*.calendar td		{ border: 1px solid black; }*/
+/*.calendar p			{ text-align: center; }*/
+/*.calendar th		{ width: 52px; text-align: center; vertical-align: middle; color: white; background-color: black; }*/
+/*.calendar td		{ height: 40px; text-align: left; vertical-align: top; }*/
+
+/*.feestdagen table	{ margin-left: 0px; margin-right: auto; }*/
+/*.feestdagen table,*/
+/*.feestdagen th,*/
+/*.feestdagen td		{ border: 1px solid black; }*/
+/*.feestdagen th		{ text-align: center; vertical-align: middle; color: white; background-color: black; padding: 5px; }*/
+/*.feestdagen td		{ text-align: left; vertical-align: top; padding: 5px; padding-right: 30px; }*/
+
+/*.we					{ background-color: #444; color: white; }*/
+/*.feest				{ background-color: #777; }*/
+/*.verlof, .brug		{ background-color: #d80000; color: white; }*/
+/*.bold				{ font-weight: bold; }*/
+/*.underline			{ text-decoration: underline; }*/
+
+/*#wrap               { margin: 0px auto; !* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina *!*/
+                      /*min-height: 100%; max-width: 1001px; background-color: #f2ffbd; }*/
+
+#wrap               { margin: 0px auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
+                      height: 100%; max-width: 1001px; background-color: #f2ffbd;
+                      overflow: scroll;
+                    }
+#menuBar            { clear: both; }
+#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; }
+#menuBar li      	{ position: relative; float: left; display: block; }
+#menuBar li a		{ color: white;
+                      width: 166px;
+                      height: 30px;
+                      line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
+                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
+                      text-decoration: none; text-align: center;
+                      border-right-style: solid; border-width: 1px; border-color: #ffa95c; }
+#menuFotos a        { border-right-style: none !important; }
+#menuBar li a:hover	{ background-color: #ffc999; color: black; }
+
+/* Hide from IE5-Mac \*/
+#menuBar li a       { float: none }
+/* End hide */
+
+#content			{ padding: 20px 20px; text-align: left; font-size: 15px; min-height: 100%; }
+#content ul         { margin-left: 20px; }
+#content ul.sublist	{ margin-top: 5px; }
+#content li         { margin-bottom: 5px; }
+
+/*#foto				{ float: left; height: 150px; width: 150px; margin-right: 40px; margin-bottom: 40px; }*/
+/*#fotos				{ margin-top: 50px; height: 1000px; }*/
+/*#fotos a:link		{ color:#fff; }*/
+/*#fotos a:visited	{ color:#fff; }*/
+/*#fotos a:hover		{ color:#fff; }*/
+/*#fotos a:active		{ color:#fff; }*/
+
+/*#foto-ilse			{ float: right; margin-left: 20px; margin-bottom: 20px; }*/
+/*#foto-zeppa			{ float: left; margin-right: 20px; }*/
+/*#kennismaking		{ margin-bottom: 50px; }*/
+/*#essentie			{ height: 420px; }*/
+
+.row::after         { content: ""; clear: both; display: table; }
+
+@media only screen and (max-width: 600px) {
+#banner             { height: 80px; }
+}
+
+/* For mobile phones: */
+[class*="span-"] {
+    float: left;
+    /*padding: 15px;*/
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .span-m-1 { width: 8.33%; }
+    .span-m-2 { width: 16.66%; }
+    .span-m-3 { width: 25%; }
+    .span-m-4 { width: 33.33%; }
+    .span-m-5 { width: 41.66%; }
+    .span-m-6 { width: 50%; }
+    .span-m-7 { width: 58.33%; }
+    .span-m-8 { width: 66.66%; }
+    .span-m-9 { width: 75%; }
+    .span-m-10 { width: 83.33%; }
+    .span-m-11 { width: 91.66%; }
+    .span-m-12 { width: 100%; }
+    
+    #foto-ilse { float: right; }
+    #foto-zeppa { float: left; }
+    #content { padding: 20px 40px; }
+    img { margin: auto; width: 95%; }
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .span-1 { width: 8.33%; }
+    .span-2 { width: 16.66%; }
+    .span-3 { width: 25%; }
+    .span-4 { width: 33.33%; }
+    .span-5 { width: 41.66%; }
+    .span-6 { width: 50%; }
+    .span-7 { width: 58.33%; }
+    .span-8 { width: 66.66%; }
+    .span-9 { width: 75%; }
+    .span-10 { width: 83.33%; }
+    .span-11 { width: 91.66%; }
+    .span-12 { width: 100%; }
+}
+
+.float-right		{ float: right; }

@@ -9,8 +9,8 @@
    achtergrond: #f2ffbd
 */
 
-*                   { margin: 0px; padding: 0px; }
-html				{ height: 100%; }
+*                   { margin: 0px; padding: 0px; box-sizing: border-box; }
+/*html				{ height: 100%; }*/
 body                { font-family: Roboto,arial,sans-serif; font-size: 30px; background-color: #9C9C9C; height: 100%;
                       text-align: center; /* nodig om het block te centreren in IE */ }
 p, ul				{ margin-bottom: 10px; }
@@ -64,7 +64,6 @@ a:active			{ color:#ff7900; }
                       text-decoration: none; text-align: center;
                       border-right-style: solid; border-width: 1px; border-color: #ffa95c; }
 #menuFotos a        { border-right-style: none !important; }
-/* #menuBar li:hover a, */
 #menuBar li a:hover	{ background-color: #ffc999; color: black; }
 
 /* Hide from IE5-Mac \*/
@@ -83,13 +82,48 @@ a:active			{ color:#ff7900; }
 #fotos a:hover		{ color:#fff; }
 #fotos a:active		{ color:#fff; }
 
-/* #ilse				{ float: right; margin: auto; display: block; } */
-#ilse				{ float: right; margin-left: 20px; margin-bottom: 20px; }
-#zeppa				{ float: left; margin-right: 20px; }
-#kennismaking		{ margin-bottom: 50px; }
-#essentie			{ height: 420px; }
+/*#foto-ilse			{ float: right; margin-left: 20px; margin-bottom: 20px; }*/
+/*#foto-zeppa			{ float: left; margin-right: 20px; }*/
+/*#kennismaking		{ margin-bottom: 50px; }*/
+/*#essentie			{ height: 420px; }*/
 
+.row::after         { content: ""; clear: both; display: table; }
 
 @media only screen and (max-width: 600px) {
 .banner             { height: 80px; }
+}
+
+/* For mobile phones: */
+[class*="span-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .span-m-1 {width: 8.33%;}
+    .span-m-2 {width: 16.66%;}
+    .span-m-3 {width: 25%;}
+    .span-m-4 {width: 33.33%;}
+    .span-m-5 {width: 41.66%;}
+    .span-m-6 {width: 50%;}
+    .span-m-7 {width: 58.33%;}
+    .span-m-8 {width: 66.66%;}
+    .span-m-9 {width: 75%;}
+    .span-m-10 {width: 83.33%;}
+    .span-m-11 {width: 91.66%;}
+    .span-m-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .span-1 {width: 8.33%;}
+    .span-2 {width: 16.66%;}
+    .span-3 {width: 25%;}
+    .span-4 {width: 33.33%;}
+    .span-5 {width: 41.66%;}
+    .span-6 {width: 50%;}
+    .span-7 {width: 58.33%;}
+    .span-8 {width: 66.66%;}
+    .span-9 {width: 75%;}
+    .span-10 {width: 83.33%;}
+    .span-11 {width: 91.66%;}
+    .span-12 {width: 100%;}
 }
