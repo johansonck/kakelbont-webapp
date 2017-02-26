@@ -13,7 +13,7 @@
                       box-sizing: border-box;
                     }
 html, body          { height: 100%; }
-body                { font-family: Indie Flower,arial,sans-serif;
+body                { font-family: Roboto,arial,sans-serif;
                       background-color: #9C9C9C;  /* grijze zijranden */
                       text-align: center; /* nodig om het block te centreren in IE */
                     }
