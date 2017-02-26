@@ -69,7 +69,12 @@ a:active			{ color:#ff7900; }
 #menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
                       overflow: hidden; /* niet meer nodig als menu responsive is */
                     }
-#menuBar li      	{ position: relative; float: left; display: block; width: 16.5%; }
+#menuBar li      	{ position: relative; float: left; display: block; }
+#menuIndex      	{ width: 16% }
+#menuContact      	{ width: 19% }
+#menuWiewat      	{ width: 27% }
+#menuKalender      	{ width: 22% }
+#menuFotos      	{ width: 16% }
 #menuBar li a		{ color: white;
                       line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
                       display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
@@ -128,6 +133,7 @@ a:active			{ color:#ff7900; }
     #foto-zeppa { float: left; }
     #content { padding: 20px 40px; }
     img { margin: auto; width: 95%; }
+    #menuBar li { width: 20%; }
 }
 @media only screen and (min-width: 768px) {
     /* For desktop: */
