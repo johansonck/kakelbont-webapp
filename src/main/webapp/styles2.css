@@ -84,7 +84,7 @@ a:active			{ color:#ff7900; }
 #menuBar li a       { float: none }
 /* End hide */
 
-#content			{ padding: 20px 20px; text-align: left; font-size: 15px; }
+#content			{ padding: 0 20px 20px; text-align: left; font-size: 15px; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
