@@ -9,11 +9,11 @@
    achtergrond: #f2ffbd
 */
 
-*                   { margin: 0px; /* zorgt ervoor dat de banner mooi aansluit met de bovenkant van de browser */
+*                   { margin: 0; /* zorgt ervoor dat de banner mooi aansluit met de bovenkant van de browser */
                       box-sizing: border-box;
                     }
 html, body          { height: 100%; }
-body                { font-family: Roboto,arial,sans-serif;
+body                { font-family: Indie Flower,arial,sans-serif;
                       background-color: #9C9C9C;  /* grijze zijranden */
                       text-align: center; /* nodig om het block te centreren in IE */
                     }
@@ -61,19 +61,22 @@ a:active			{ color:#ff7900; }
                       /*min-height: 100%; max-width: 1001px; background-color: #f2ffbd; }*/
 
 #wrap               { margin: 0 auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
-                      height: 100%; max-width: 1001px; background-color: #f2ffbd;
-                      overflow: scroll;
+                      max-width: 1001px;
+                      background-color: #f2ffbd;
+                      overflow: hidden;
                     }
 #menuBar            { clear: both; }
-#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0; }
+#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
+                      overflow: hidden; /* niet meer nodig als menu responsive is */
+                    }
 #menuBar li      	{ position: relative; float: left; display: block; width: 16.5%; }
 #menuBar li a		{ color: white;
-                      height: 30px;
                       line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
                       display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
                       text-decoration: none; text-align: center;
                       border: 1px #ffa95c; border-right-style: solid;
-                    }
+                      overflow: hidden; /* niet meer nodig als menu responsive is */
+}
 #menuFotos a        { border-right-style: none !important; }
 #menuBar li a:hover	{ background-color: #ffc999; color: black; }
 
@@ -81,7 +84,7 @@ a:active			{ color:#ff7900; }
 #menuBar li a       { float: none }
 /* End hide */
 
-#content			{ padding: 20px 20px; text-align: left; font-size: 15px; min-height: 100%; }
+#content			{ padding: 20px 20px; text-align: left; font-size: 15px; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
