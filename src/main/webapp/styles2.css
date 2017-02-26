@@ -64,6 +64,7 @@ a:active			{ color:#ff7900; }
                       max-width: 1001px;
                       background-color: #f2ffbd;
                       overflow: hidden;
+                      min-height: 100%; /* zorgt ervoor dat de achtergrondkleur altijd tot onderaan het scherm gaat */
                     }
 #menuBar            { clear: both; }
 #menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
@@ -88,6 +89,8 @@ a:active			{ color:#ff7900; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
+
+#footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
 
 /*#foto				{ float: left; height: 150px; width: 150px; margin-right: 40px; margin-bottom: 40px; }*/
 /*#fotos				{ margin-top: 50px; height: 1000px; }*/
