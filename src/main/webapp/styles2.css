@@ -22,7 +22,7 @@ img 				{ margin: 10px auto;  /* top en bottom is 10px, left en right is auto wa
                       display: block;
                       width: 100%;
                     }
-/*hr					{ margin-top: 20px; margin-bottom: 20px; }*/
+hr					{ margin-top: 20px; margin-bottom: 20px; }
 
 a:link				{ color:#ff7900; }
 a:visited			{ color:#ff7900; }
