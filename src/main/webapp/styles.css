@@ -163,7 +163,7 @@ a:active			{ color:#ff7900; }
     #menuBar li { width: 20%; }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
     /* For larger tablets and desktop: */
     #content { padding: 20px 40px; }
     .foto {
