@@ -1,6 +1,7 @@
 package org.kakelbont.webapp.calendar;
 
 import org.junit.Test;
+import org.kakelbont.webapp.calendar.converter.StringToLocalDateConverter;
 
 import java.time.LocalDate;
 

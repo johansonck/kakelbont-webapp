@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.kakelbont.webapp.calendar.reader.CalendarFileLineReader;
 
 public class CalendarFileLineReaderTest {
 

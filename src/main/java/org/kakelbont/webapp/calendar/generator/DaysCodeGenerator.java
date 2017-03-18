@@ -1,7 +1,6 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.generator;
 
 import be.sonck.xml.XmlElement;
-import org.kakelbont.webapp.calendar.NewDayCodeGenerator.Style;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -13,7 +12,7 @@ import java.util.List;
  */
 public class DaysCodeGenerator {
 
-    private NewDayCodeGenerator dayCodeGenerator = new NewDayCodeGenerator();
+    private DayCodeGenerator dayCodeGenerator = new DayCodeGenerator();
 
     public XmlElement generate(int year, int month, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
         XmlElement rootElement = new XmlElement("ul");
@@ -42,13 +41,13 @@ public class DaysCodeGenerator {
         return elements;
     }
 
-    private Style determineStyle(LocalDate day, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
+    private DayCodeGenerator.Style determineStyle(LocalDate day, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
         if (feestdagen != null && feestdagen.contains(day)) {
-            return Style.FEESTDAG;
+            return DayCodeGenerator.Style.FEESTDAG;
         }
 
         if (sluitingsdagen != null && sluitingsdagen.contains(day)) {
-            return Style.SLUITINGSDAG;
+            return DayCodeGenerator.Style.SLUITINGSDAG;
         }
 
         return null;
@@ -75,7 +74,7 @@ public class DaysCodeGenerator {
         emptyDays.add(dayCodeGenerator.generateEmpty());
 
         if (dayOfTheWeek == DayOfWeek.SATURDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty(Style.WEEKEND));
+        emptyDays.add(dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
 
         return emptyDays;
     }
@@ -87,10 +86,10 @@ public class DaysCodeGenerator {
         DayOfWeek dayOfTheWeek = firstDayOfNextMonth.getDayOfWeek();
 
         if (dayOfTheWeek == DayOfWeek.MONDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty(Style.WEEKEND));
+        emptyDays.add(0, dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
 
         if (dayOfTheWeek == DayOfWeek.SUNDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty(Style.WEEKEND));
+        emptyDays.add(0, dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
 
         if (dayOfTheWeek == DayOfWeek.SATURDAY) return emptyDays;
         emptyDays.add(0, dayCodeGenerator.generateEmpty());

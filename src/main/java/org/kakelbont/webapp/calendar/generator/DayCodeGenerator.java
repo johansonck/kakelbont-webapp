@@ -1,4 +1,4 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.generator;
 
 import be.sonck.xml.XmlElement;
 import be.sonck.xml.value.StringValue;
@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import static java.time.DayOfWeek.SATURDAY;
 import static java.time.DayOfWeek.SUNDAY;
 
-public class NewDayCodeGenerator {
+public class DayCodeGenerator {
 	
 	public enum Style {
 		WEEKEND("weekend"), FEESTDAG("feestdag"), SLUITINGSDAG("gesloten");

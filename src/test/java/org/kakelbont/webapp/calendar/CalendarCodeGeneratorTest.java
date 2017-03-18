@@ -4,6 +4,8 @@ import be.sonck.xml.XmlElement;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.kakelbont.webapp.calendar.generator.CalendarCodeGenerator;
+import org.kakelbont.webapp.calendar.generator.MonthCodeGenerator;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -21,13 +23,13 @@ import static org.mockito.Mockito.when;
  * Created by johansonck on 18/03/2017.
  */
 @RunWith(MockitoJUnitRunner.class)
-public class NewCalendarCodeGeneratorTest {
+public class CalendarCodeGeneratorTest {
 
     @Mock
-    private NewMonthCodeGenerator monthCodeGenerator;
+    private MonthCodeGenerator monthCodeGenerator;
 
     @InjectMocks
-    private NewCalendarCodeGenerator calendarCodeGenerator;
+    private CalendarCodeGenerator calendarCodeGenerator;
 
 
     @Before

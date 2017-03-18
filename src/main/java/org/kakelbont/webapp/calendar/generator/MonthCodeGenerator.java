@@ -1,4 +1,4 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.generator;
 
 import be.sonck.xml.XmlElement;
 
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class NewMonthCodeGenerator {
+public class MonthCodeGenerator {
 
     private final DaysCodeGenerator daysCodeGenerator = new DaysCodeGenerator();
 

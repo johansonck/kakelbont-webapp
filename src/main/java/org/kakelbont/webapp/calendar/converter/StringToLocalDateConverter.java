@@ -1,4 +1,4 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.converter;
 
 import java.time.LocalDate;
 

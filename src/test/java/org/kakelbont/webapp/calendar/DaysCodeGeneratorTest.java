@@ -3,6 +3,8 @@ package org.kakelbont.webapp.calendar;
 import be.sonck.xml.XmlElement;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
+import org.kakelbont.webapp.calendar.generator.DaysCodeGenerator;
+import org.kakelbont.webapp.calendar.reader.LocalDateFileReader;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertNotNull;

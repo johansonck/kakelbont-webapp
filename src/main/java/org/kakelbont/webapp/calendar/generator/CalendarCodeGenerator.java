@@ -1,4 +1,4 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.generator;
 
 import be.sonck.xml.XmlElement;
 
@@ -6,9 +6,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NewCalendarCodeGenerator {
+public class CalendarCodeGenerator {
 
-    private NewMonthCodeGenerator monthCodeGenerator = new NewMonthCodeGenerator();
+    private MonthCodeGenerator monthCodeGenerator = new MonthCodeGenerator();
 
     public List<XmlElement> generate(int firstYear, int firstMonth, int lastYear, int lastMonth,
             List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {

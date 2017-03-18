@@ -1,6 +1,7 @@
-package org.kakelbont.webapp.calendar;
+package org.kakelbont.webapp.calendar.reader;
 
 import org.apache.commons.io.IOUtils;
+import org.kakelbont.webapp.calendar.converter.StringToLocalDateConverter;
 
 import java.io.BufferedReader;
 import java.io.IOException;

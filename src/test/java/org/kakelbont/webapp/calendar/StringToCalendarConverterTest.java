@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.kakelbont.webapp.calendar.converter.StringToCalendarConverter;
 
 public class StringToCalendarConverterTest {
 

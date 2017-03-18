@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.apache.commons.io.IOUtils;
-import org.kakelbont.webapp.calendar.StringToCalendarConverter;
+import org.kakelbont.webapp.calendar.converter.StringToCalendarConverter;
 import org.kakelbont.webapp.feestdag.Feestdag.Name;
 
 public class FeestdagFileLineReader {
