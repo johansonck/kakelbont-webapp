@@ -12,6 +12,7 @@
 *                   { margin: 0; /* zorgt ervoor dat de banner mooi aansluit met de bovenkant van de browser */
                       box-sizing: border-box;
                     }
+html                { -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */ }
 html, body          { height: 100%; }
 body                { font-family: Roboto,arial,sans-serif;
                       background-color: #9C9C9C;  /* grijze zijranden */
@@ -23,6 +24,9 @@ img 				{ margin: 10px auto;  /* top en bottom is 10px, left en right is auto wa
                       width: 100%;
                     }
 hr					{ margin-top: 20px; margin-bottom: 20px; }
+.kort			    { margin-left: 10px; margin-right: 10px; }
+
+::selection         { background: rgba(255, 121, 0, 0.51); }
 
 a:link				{ color:#ff7900; }
 a:visited			{ color:#ff7900; }
@@ -32,34 +36,30 @@ a:active			{ color:#ff7900; }
 #banner             { width: 100%; background-color: #fff; float: left; }
 #logo               { width: 50%; float: left; margin: 10px 10px; }
 
-.title              { font-weight: bold; font-size: 22px; margin-top: 10px; }
+.title              { font-weight: bold; font-size: 22px; /*margin-top: 10px;*/ }
 .subtitle           { font-weight: bold; font-size: 16px; }
 
-/*.legend				{ width: 50px; height: 40px; border: 1px solid black; text-align: center; }*/
-/*.calendar			{ width: 50%; float: left; min-height: 100%; margin-bottom: 30px; }*/
-/*.calendar table		{ margin-left: auto; margin-right: auto; }*/
-/*.calendar table,*/
-/*.calendar th,*/
-/*.calendar td		{ border: 1px solid black; }*/
-/*.calendar p			{ text-align: center; }*/
-/*.calendar th		{ width: 52px; text-align: center; vertical-align: middle; color: white; background-color: black; }*/
-/*.calendar td		{ height: 40px; text-align: left; vertical-align: top; }*/
+table               { border-collapse: collapse; }
 
-/*.feestdagen table	{ margin-left: 0px; margin-right: auto; }*/
-/*.feestdagen table,*/
-/*.feestdagen th,*/
-/*.feestdagen td		{ border: 1px solid black; }*/
-/*.feestdagen th		{ text-align: center; vertical-align: middle; color: white; background-color: black; padding: 5px; }*/
-/*.feestdagen td		{ text-align: left; vertical-align: top; padding: 5px; padding-right: 30px; }*/
+.legende            { margin: 5px 10px; }
+.legende ul         { list-style-type: none; margin-left: 0 !important; }
+.kalender           { margin: 10px 10px; }
+.kalender ul        { list-style-type: none; margin-left: 0 !important; }
+.maandHoofding      { padding: 10px 0; width: 100%; background: #1ca615; text-align: center; color: white; }
+.maandHoofding ul   { margin: 0; padding: 0; }
+.maandHoofding li   { color: white; font-size: 20px; text-transform: uppercase; letter-spacing: 3px; }
+.dagenHoofding      { margin: 0; padding: 0; background-color:#ccc; height: 38px; overflow: hidden; }
+.dagenHoofding li   { padding: 10px 0; display: inline-block; width: 14.2857%; color: #666; text-align: center; float: left; }
+.dagen              { margin: 0; padding: 0; background: white; overflow: hidden; }
+.dagen li           { line-height: 40px; list-style-type: none; display: inline-block; width: 14.2857%; text-align: center; margin-bottom: 0 !important; float: left; color: #777; padding: 0; }
+.weekend            { background-color:#ddd; }
+.feestdag           { background-color:#ddd; }
+.gesloten           { background-color: #ff7900; color: white !important; }
+.info               { width: 100% !important; }
+.break              { clear: both; }
 
-/*.we					{ background-color: #444; color: white; }*/
-/*.feest				{ background-color: #777; }*/
-/*.verlof, .brug		{ background-color: #d80000; color: white; }*/
-/*.bold				{ font-weight: bold; }*/
-/*.underline			{ text-decoration: underline; }*/
-
-/*#wrap               { margin: 0px auto; !* top & bottom: 0, left & right: auto ==> horizontaal gecentreerd op pagina *!*/
-                      /*min-height: 100%; max-width: 1001px; background-color: #f2ffbd; }*/
+.bold				{ font-weight: bold; }
+.underline			{ text-decoration: underline; }
 
 #wrap               { margin: 0 auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
                       max-width: 1024px;
@@ -91,69 +91,34 @@ a:active			{ color:#ff7900; }
 #menuBar li a       { float: none }
 /* End hide */
 
-#content			{ padding: 0 20px 20px; text-align: left; font-size: 15px; }
+#content			{ padding: 10px 20px; text-align: left; font-size: 15px; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
 
 #footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
 
-
-
-
 .foto               { float: left; position: relative; width: 100%; padding-bottom: 100%; }
-.fotoInner          { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px;
+.fotoInner          { position: absolute; left: 10px; right: 10px; /* top: 10px; bottom: 10px; */
                       /*overflow: hidden;*/
                     }
 .fotoInner img      { width: 100%; }
-
-
-
-
-
-/*#foto				{ float: left; height: 150px; width: 150px; margin-right: 20px; margin-bottom: 20px; }*/
-/*#fotos				{ margin-top: 20px; }*/
-/*#fotos a:link		{ color:#fff; }*/
-/*#fotos a:visited	{ color:#fff; }*/
-/*#fotos a:hover		{ color:#fff; }*/
-/*#fotos a:active		{ color:#fff; }*/
-
-/*#foto-ilse			{ float: right; margin-left: 20px; margin-bottom: 20px; }*/
-/*#foto-zeppa			{ float: left; margin-right: 20px; }*/
-/*#kennismaking		{ margin-bottom: 50px; }*/
-/*#essentie			{ height: 420px; }*/
 
 .row::after         { content: ""; clear: both; display: table; }
 
 /* For mobile phones: */
 [class*="span-"] {
     float: left;
-    /*padding: 15px;*/
     width: 100%;
 }
 
 @media only screen and (min-width: 415px) {
-    /* For larger mobile phones or landscape mode: */
-    .foto {
-        width: 50%;
-        padding-bottom: 50%;
-    }
-}
-
-@media only screen and (min-width: 640px) {
-    /* For small tablets: */
-    .span-1 { width: 8.33%; }
-    .span-2 { width: 16.66%; }
-    .span-3 { width: 25%; }
-    .span-4 { width: 33.33%; }
-    .span-5 { width: 41.66%; }
+    /* iPhone 6 plus is 414px. Er is geen courante smartphone die breder is. */
+    .span-4 { width: 50%; }
     .span-6 { width: 50%; }
-    .span-7 { width: 58.33%; }
-    .span-8 { width: 66.66%; }
-    .span-9 { width: 75%; }
-    .span-10 { width: 83.33%; }
-    .span-11 { width: 91.66%; }
     .span-12 { width: 100%; }
+
+    .foto { width: 50%; padding-bottom: 50%; }
 
     /* Nodig om de foto's netjes te laten aansluiten met de zijkant van de content wrapper. */
     #foto-ilse { float: right; }
@@ -164,21 +129,15 @@ a:active			{ color:#ff7900; }
 }
 
 @media only screen and (min-width: 769px) {
-    /* For larger tablets and desktop: */
+    /* iPad is 768px breed. */
     #content { padding: 20px 40px; }
-    .foto {
-        width: 33.3%;
-        padding-bottom: 33.3%;
-    }
+    .foto { width: 33.3%; padding-bottom: 33.3%; }
 }
 
-/*@media only screen and (min-width: 1024px) {*/
-    /*!* For larger tablets and desktop: *!*/
-    /*.foto {*/
-        /*width: 25%;*/
-        /*padding-bottom: 25%;*/
-    /*}*/
-/*}*/
+@media only screen and (min-width: 1024px) {
+    /* iPad is 1024px in landscape mode. Desktop zal typisch ook deze breedte gebruiken. */
+    .span-4 { width: 33.33%; }
+}
 
 /* Moet onderaan staan omdat het anders wordt overschreven door de mobile phones config hierboven. */
 .float-right		{ float: right; }

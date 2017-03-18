@@ -1,14 +1,14 @@
 package org.kakelbont.webapp.calendar;
 
+import be.sonck.xml.XmlElement;
+
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
-import be.sonck.xml.XmlElement;
-
 public class DefaultMonthCodeGenerator implements MonthCodeGenerator {
 
-	private final WeekCodeGenerator weekCodeGenerator = new WeekCodeGenerator();
+	private final DefaultWeekCodeGenerator weekCodeGenerator = new DefaultWeekCodeGenerator();
 	
 	public XmlElement generate(int year, int month, List<Calendar> feestdagen, List<Calendar> sluitingsdagen) {
 		XmlElement rootElement = new XmlElement("div");

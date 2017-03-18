@@ -8,9 +8,9 @@ import java.util.List;
 public class MainClass {
 	
 	public static void main(String[] args) throws Exception {
-		CalendarFileReader reader = new CalendarFileReader();
+		LocalDateFileReader reader = new LocalDateFileReader();
 		
-		List<XmlElement> list = new DefaultCalendarCodeGenerator().generate(2016, Calendar.JANUARY,
+		List<XmlElement> list = new NewCalendarCodeGenerator().generate(2016, 1,
 				2016, Calendar.DECEMBER, reader.readFile("/feestdagen.txt"),
 				reader.readFile("/verlof.txt"));
 		
