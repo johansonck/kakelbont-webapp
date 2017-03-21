@@ -20,14 +20,14 @@ public class MonthCodeGeneratorTest {
     public void test() throws Exception {
         LocalDateFileReader reader = new LocalDateFileReader();
 
-        XmlElement actual = new MonthCodeGenerator().generate(2010, 11,
-                reader.readFile("/test-kalender-november2010-feestdagen.txt"),
-                reader.readFile("/test-kalender-november2010-sluitingsdagen.txt"));
+        XmlElement actual = new MonthCodeGenerator().generate(2016, 1,
+                reader.readFile("/test-kalender-januari2016-feestdagen.txt"),
+                reader.readFile("/test-kalender-januari2016-sluitingsdagen.txt"));
 
         assertNotNull(actual);
 
         assertThat(actual.toString(false))
-                .isEqualTo(readResource("/test-kalender-november2010-new.txt"));
+                .isEqualTo(readResource("/test-kalender-januari2016.txt"));
     }
 
     private String readResource(String name) throws IOException {

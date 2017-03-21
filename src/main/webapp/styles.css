@@ -41,21 +41,24 @@ a:active			{ color:#ff7900; }
 
 table               { border-collapse: collapse; }
 
-.legende            { margin: 5px 10px; }
-.legende ul         { list-style-type: none; margin-left: 0 !important; }
+.legende            { margin: 0 10px 25px; }
+.legende ul         { list-style-type: none; margin: 0 !important; padding: 0; background: white; overflow: hidden; }
+.legende li         { line-height: 25px; list-style-type: none; display: inline-block; width: 10%; text-align: center; margin-bottom: 0 !important; float: left; color: rgba(0, 0, 0, 0.7); padding: 0; }
+.info               { width: 40% !important; text-align: left !important; padding-left: 10px !important; background-color: #f2ffbd; font-size: 13px; }
 .kalender           { margin: 10px 10px; }
 .kalender ul        { list-style-type: none; margin-left: 0 !important; }
 .maandHoofding      { padding: 10px 0; width: 100%; background: #1ca615; text-align: center; color: white; }
 .maandHoofding ul   { margin: 0; padding: 0; }
 .maandHoofding li   { color: white; font-size: 20px; text-transform: uppercase; letter-spacing: 3px; }
-.dagenHoofding      { margin: 0; padding: 0; background-color:#ccc; height: 38px; overflow: hidden; }
+.dagenHoofding      { margin: 0; padding: 0; background-color: #ccc; height: 38px; overflow: hidden; }
 .dagenHoofding li   { padding: 10px 0; display: inline-block; width: 14.2857%; color: #666; text-align: center; float: left; }
 .dagen              { margin: 0; padding: 0; background: white; overflow: hidden; }
-.dagen li           { line-height: 40px; list-style-type: none; display: inline-block; width: 14.2857%; text-align: center; margin-bottom: 0 !important; float: left; color: #777; padding: 0; }
-.weekend            { background-color:#ddd; }
-.feestdag           { background-color:#ddd; }
+.dagen li           { font-size: 13px; line-height: 30px; list-style-type: none; display: inline-block; width: 14.2857%; text-align: center; margin-bottom: 0 !important; float: left; color: rgba(0, 0, 0, 0.7); padding: 0; }
+.weekend            { background-color: #e8e8e8; }
+.feestdag           { background-color: #aaaaaa; color: white !important; }
 .gesloten           { background-color: #ff7900; color: white !important; }
-.info               { width: 100% !important; }
+.andereMaand        { color: rgba(0, 0, 0, 0.2) !important; }
+.optioneel          { display: none !important; }
 .break              { clear: both; }
 
 .bold				{ font-weight: bold; }
@@ -119,6 +122,8 @@ table               { border-collapse: collapse; }
     .span-12 { width: 100%; }
 
     .foto { width: 50%; padding-bottom: 50%; }
+    .optioneel { display: inline-block !important; }
+
 
     /* Nodig om de foto's netjes te laten aansluiten met de zijkant van de content wrapper. */
     #foto-ilse { float: right; }

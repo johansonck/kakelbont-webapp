@@ -1,11 +1,15 @@
 package org.kakelbont.webapp.calendar.generator;
 
 import be.sonck.xml.XmlElement;
+import org.kakelbont.webapp.calendar.generator.DayCodeGenerator.Style;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import static java.time.DayOfWeek.SATURDAY;
+import static java.time.DayOfWeek.SUNDAY;
 
 /**
  * Created by johansonck on 18/03/2017.
@@ -16,18 +20,20 @@ public class DaysCodeGenerator {
 
     public XmlElement generate(int year, int month, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
         XmlElement rootElement = new XmlElement("ul");
-        rootElement.addAttribute("class", "dagen");
+        rootElement.setAttribute("class", "dagen");
 
         LocalDate firstDayOfTheMonth = LocalDate.of(year, month, 1);
 
-        getEmptyDaysBefore(firstDayOfTheMonth).forEach(rootElement::addChild);
-        getDayElements(firstDayOfTheMonth, feestdagen, sluitingsdagen).forEach(rootElement::addChild);
-        getEmptyDaysAfter(firstDayOfTheMonth).forEach(rootElement::addChild);
+        getDaysBefore(firstDayOfTheMonth).forEach(rootElement::addChild);
+        getDaysInMonth(firstDayOfTheMonth, feestdagen, sluitingsdagen).forEach(rootElement::addChild);
+
+        int numberOfMissingDays = 42 - rootElement.getChildren().size();
+        getDaysAfter(firstDayOfTheMonth, numberOfMissingDays).forEach(rootElement::addChild);
 
         return rootElement;
     }
 
-    private List<XmlElement> getDayElements(LocalDate firstDayOfTheMonth, List<LocalDate> feestdagen,
+    private List<XmlElement> getDaysInMonth(LocalDate firstDayOfTheMonth, List<LocalDate> feestdagen,
             List<LocalDate> sluitingsdagen) {
 
         List<XmlElement> elements = new ArrayList<>();
@@ -38,74 +44,108 @@ public class DaysCodeGenerator {
             XmlElement element = dayCodeGenerator.generate(day, determineStyle(day, feestdagen, sluitingsdagen));
             elements.add(element);
         }
+
         return elements;
     }
 
-    private DayCodeGenerator.Style determineStyle(LocalDate day, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
+    private Style determineStyle(LocalDate day, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
+        if (isWeekend(day)) {
+            return Style.WEEKEND;
+        }
+
         if (feestdagen != null && feestdagen.contains(day)) {
-            return DayCodeGenerator.Style.FEESTDAG;
+            return Style.FEESTDAG;
         }
 
         if (sluitingsdagen != null && sluitingsdagen.contains(day)) {
-            return DayCodeGenerator.Style.SLUITINGSDAG;
+            return Style.SLUITINGSDAG;
         }
 
         return null;
     }
 
-    private List<XmlElement> getEmptyDaysBefore(LocalDate firstDayOfTheMonth) {
-        List<XmlElement> emptyDays = new ArrayList<>();
+    private List<XmlElement> getDaysBefore(LocalDate firstDayOfTheMonth) {
+        List<XmlElement> daysToAdd = new ArrayList<>();
 
         DayOfWeek dayOfTheWeek = firstDayOfTheMonth.getDayOfWeek();
 
-        if (dayOfTheWeek == DayOfWeek.MONDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty());
+        if (dayOfTheWeek == DayOfWeek.MONDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(1)));
 
-        if (dayOfTheWeek == DayOfWeek.TUESDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty());
+        if (dayOfTheWeek == DayOfWeek.TUESDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(2)));
 
-        if (dayOfTheWeek == DayOfWeek.WEDNESDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty());
+        if (dayOfTheWeek == DayOfWeek.WEDNESDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(3)));
 
-        if (dayOfTheWeek == DayOfWeek.THURSDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty());
+        if (dayOfTheWeek == DayOfWeek.THURSDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(4)));
 
-        if (dayOfTheWeek == DayOfWeek.FRIDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty());
+        if (dayOfTheWeek == DayOfWeek.FRIDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(5)));
 
-        if (dayOfTheWeek == DayOfWeek.SATURDAY) return emptyDays;
-        emptyDays.add(dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
+        if (dayOfTheWeek == DayOfWeek.SATURDAY) return daysToAdd;
+        daysToAdd.add(0, generateDayBefore(firstDayOfTheMonth.minusDays(6)));
 
-        return emptyDays;
+        return daysToAdd;
     }
 
-    private List<XmlElement> getEmptyDaysAfter(LocalDate firstDayOfTheMonth) {
-        List<XmlElement> emptyDays = new ArrayList<>();
+    private XmlElement generateDayBefore(LocalDate day) {
+        return dayCodeGenerator.generate(day, determineStylesForDayBefore(day));
+    }
 
+    private List<XmlElement> getDaysAfter(LocalDate firstDayOfTheMonth, int numberOfDays) {
+        List<XmlElement> daysToAdd = new ArrayList<>();
         LocalDate firstDayOfNextMonth = firstDayOfTheMonth.plusMonths(1);
-        DayOfWeek dayOfTheWeek = firstDayOfNextMonth.getDayOfWeek();
+        boolean optional = false;
 
-        if (dayOfTheWeek == DayOfWeek.MONDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
+        for (int i = 0; i < numberOfDays; i++) {
+            LocalDate currentDay = firstDayOfNextMonth.plusDays(i);
 
-        if (dayOfTheWeek == DayOfWeek.SUNDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty(DayCodeGenerator.Style.WEEKEND));
+            if (currentDay.getDayOfWeek() == DayOfWeek.MONDAY) {
+                optional = true;
+            }
 
-        if (dayOfTheWeek == DayOfWeek.SATURDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty());
+            List<Style> styles = determineStylesForDayAfter(currentDay, optional);
+            daysToAdd.add(dayCodeGenerator.generate(currentDay, styles));
+        }
 
-        if (dayOfTheWeek == DayOfWeek.FRIDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty());
+        return daysToAdd;
+    }
 
-        if (dayOfTheWeek == DayOfWeek.THURSDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty());
+    private List<Style> determineStylesForDayAfter(LocalDate day, boolean optional) {
+        List<Style> styles = new ArrayList<>();
 
-        if (dayOfTheWeek == DayOfWeek.WEDNESDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty());
+        styles.add(Style.ANDERE_MAAND);
 
-        if (dayOfTheWeek == DayOfWeek.TUESDAY) return emptyDays;
-        emptyDays.add(0, dayCodeGenerator.generateEmpty());
+        if (isWeekend(day)) {
+            styles.add(Style.WEEKEND);
+        }
 
-        return emptyDays;
+        if (optional) {
+            styles.add(Style.OPTIONEEL);
+        }
+
+        return styles;
+    }
+
+    private List<Style> determineStylesForDayBefore(LocalDate day) {
+        List<Style> styles = new ArrayList<>();
+
+        styles.add(Style.ANDERE_MAAND);
+
+        if (isWeekend(day)) {
+            styles.add(Style.WEEKEND);
+        }
+
+        return styles;
+    }
+
+    private boolean isWeekend(LocalDate day) {
+        if (day == null) return false;
+
+        DayOfWeek dayOfTheWeek = day.getDayOfWeek();
+
+        return (dayOfTheWeek == SATURDAY || dayOfTheWeek == SUNDAY);
     }
 }

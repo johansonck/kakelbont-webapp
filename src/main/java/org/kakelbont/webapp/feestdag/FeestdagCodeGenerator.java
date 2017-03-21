@@ -16,7 +16,7 @@ public class FeestdagCodeGenerator {
 		assert feestdagen.size() > 0;
 		
 		XmlElement divElement = new XmlElement("div");
-		divElement.addAttribute("class", "feestdagen");
+		divElement.setAttribute("class", "feestdagen");
 		
 		XmlElement tableElement = new XmlElement(divElement, "table");
 		XmlElement tbodyElement = new XmlElement(tableElement, "tbody");

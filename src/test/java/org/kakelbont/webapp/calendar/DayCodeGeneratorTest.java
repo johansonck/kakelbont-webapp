@@ -8,6 +8,8 @@ import org.kakelbont.webapp.calendar.generator.DayCodeGenerator.Style;
 
 import java.time.LocalDate;
 
+import static java.util.Arrays.asList;
+
 /**
  * Created by johansonck on 14/03/2017.
  */
@@ -38,19 +40,19 @@ public class DayCodeGeneratorTest {
     }
 
     @Test
-    public void testWeekendDay() throws Exception {
-        XmlElement actual = new DayCodeGenerator().generate(LocalDate.of(2011, 8, 28));
-
-        Assert.assertNotNull(actual);
-        Assert.assertEquals("<li class=\"weekend\">28</li>", actual.toString(false));
-    }
-
-    @Test
     public void testFeestdag() throws Exception {
         XmlElement actual = new DayCodeGenerator().generate(LocalDate.of(2016, 4, 21), Style.FEESTDAG);
 
         Assert.assertNotNull(actual);
         Assert.assertEquals("<li class=\"feestdag\">21</li>", actual.toString(false));
+    }
+
+    @Test
+    public void testTweeStijlen() throws Exception {
+        XmlElement actual = new DayCodeGenerator().generate(LocalDate.of(2016, 4, 21), asList(Style.WEEKEND, Style.ANDERE_MAAND));
+
+        Assert.assertNotNull(actual);
+        Assert.assertEquals("<li class=\"weekend andereMaand\">21</li>", actual.toString(false));
     }
 
     @Test
