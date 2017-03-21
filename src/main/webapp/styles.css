@@ -43,8 +43,8 @@ table               { border-collapse: collapse; }
 
 .legende            { margin: 0 10px 25px; }
 .legende ul         { list-style-type: none; margin: 0 !important; padding: 0; background: white; overflow: hidden; }
-.legende li         { line-height: 25px; list-style-type: none; display: inline-block; width: 10%; text-align: center; margin-bottom: 0 !important; float: left; color: rgba(0, 0, 0, 0.7); padding: 0; }
-.info               { width: 40% !important; text-align: left !important; padding-left: 10px !important; background-color: #f2ffbd; font-size: 13px; }
+.legende li         { font-size: 13px; line-height: 25px; list-style-type: none; display: inline-block; width: 10%; text-align: center; margin-bottom: 0 !important; float: left; color: rgba(0, 0, 0, 0.7); padding: 0; }
+.info               { width: 40% !important; text-align: left !important; padding-left: 10px !important; background-color: #f2ffbd; }
 .kalender           { margin: 10px 10px; }
 .kalender ul        { list-style-type: none; margin-left: 0 !important; }
 .maandHoofding      { padding: 10px 0; width: 100%; background: #1ca615; text-align: center; color: white; }
