@@ -98,7 +98,7 @@ table               { border-collapse: collapse; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
-#content img        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
+/*#content img        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }*/
 
 #footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
 
