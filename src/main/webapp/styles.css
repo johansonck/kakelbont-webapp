@@ -41,11 +41,11 @@ a:active			{ color:#ff7900; }
 
 table               { border-collapse: collapse; }
 
-.legende            { margin: 0 10px 25px; }
-.legende ul         { list-style-type: none; margin: 0 !important; padding: 0; background: white; overflow: hidden; }
-.legende li         { font-size: 13px; line-height: 25px; list-style-type: none; display: inline-block; width: 10%; text-align: center; margin-bottom: 0 !important; float: left; color: rgba(0, 0, 0, 0.7); padding: 0; }
-.info               { width: 40% !important; text-align: left !important; padding-left: 10px !important; background-color: #f2ffbd; }
-.kalender           { margin: 10px 10px; }
+.legende            { margin: 0 10px 40px; }
+.legende div        { font-size: 13px; float: left; }
+.vierkantje         { width: 30px; height: 25px; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
+.info               { height: 25px; text-align: left !important; padding-left: 10px !important; padding-right: 30px !important; padding-top: 5px !important; color: rgba(0, 0, 0, 0.7); }
+.kalender           { margin: 10px 10px; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
 .kalender ul        { list-style-type: none; margin-left: 0 !important; }
 .maandHoofding      { padding: 10px 0; width: 100%; background: #1ca615; text-align: center; color: white; }
 .maandHoofding ul   { margin: 0; padding: 0; }
@@ -70,7 +70,7 @@ table               { border-collapse: collapse; }
                       overflow: hidden;
                       min-height: 100%; /* zorgt ervoor dat de achtergrondkleur altijd tot onderaan het scherm gaat */
                     }
-#menuBar            { clear: both; }
+#menuBar            { clear: both; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
 #menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
                       overflow: hidden; /* niet meer nodig als menu responsive is */
                     }
@@ -98,6 +98,7 @@ table               { border-collapse: collapse; }
 #content ul         { margin-left: 20px; }
 #content ul.sublist	{ margin-top: 5px; }
 #content li         { margin-bottom: 5px; }
+#content img        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
 
 #footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
 
@@ -107,7 +108,7 @@ table               { border-collapse: collapse; }
                     }
 .fotoInner img      { width: 100%; }
 
-.google-maps        { position: relative; margin-top: 20px; padding-bottom: 75%; /* This is the aspect ratio */ height: 0; overflow: hidden; }
+.google-maps        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); position: relative; margin-top: 20px; padding-bottom: 50%; /* This is the aspect ratio */ height: 0; overflow: hidden; }
 .google-maps iframe { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; }
 
 .row::after         { content: ""; clear: both; display: table; }
