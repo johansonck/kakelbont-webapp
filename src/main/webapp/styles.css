@@ -33,8 +33,56 @@ a:visited			{ color:#ff7900; }
 a:hover				{ color:#ff7900; }
 a:active			{ color:#ff7900; }
 
+#wrap               { margin: 0 auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
+                      max-width: 1024px;
+                      background-color: #f2ffbd;
+                      overflow: hidden;
+                      min-height: 100%; /* zorgt ervoor dat de achtergrondkleur altijd tot onderaan het scherm gaat */
+                    }
+
+#header             { position: fixed; max-width: 1024px; width: 100%;
+                      /*margin-top: 100px;*/
+                      /*height: 100px;*/
+                      z-index:100000;
+                      /*margin: auto 0;*/
+                      /*top: 0;*/
+                    }
 #banner             { width: 100%; background-color: #fff; float: left; }
-#logo               { width: 50%; float: left; margin: 10px 10px; }
+#logo               { width: 180px; float: left; margin: 10px 10px; }
+
+#menuBar            { clear: both; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
+#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
+                      /*overflow: hidden; !* niet meer nodig als menu responsive is *!*/
+                    }
+#menuBar li      	{ position: relative; float: left; display: block; }
+#menuIndex      	{ width: 16% }
+#menuContact      	{ width: 19% }
+#menuWiewat      	{ width: 27% }
+#menuKalender      	{ width: 22% }
+#menuFotos      	{ width: 16% }
+#menuBar li a		{ color: white;
+                      line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
+                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
+                      text-decoration: none; text-align: center;
+                      border: 1px #ffa95c; border-right-style: solid;
+                      overflow: hidden; /* niet meer nodig als menu responsive is */
+                    }
+#menuFotos a        { border-right-style: none !important; }
+#menuBar li a:hover	{ background-color: #ffc999; color: black; }
+
+/* Hide from IE5-Mac \*/
+#menuBar li a       { float: none }
+/* End hide */
+
+#content			{ padding: 10px 20px; text-align: left; font-size: 15px;
+                      margin-top: 113px;
+                    }
+#content ul         { margin-left: 20px; }
+#content ul.sublist	{ margin-top: 5px; }
+#content li         { margin-bottom: 5px; }
+/*#content img        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }*/
+
+#footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
 
 .title              { font-weight: bold; font-size: 22px; /*margin-top: 10px;*/ }
 .subtitle           { font-weight: bold; font-size: 16px; }
@@ -44,7 +92,7 @@ table               { border-collapse: collapse; }
 .legende            { margin: 0 10px 40px; }
 .legende div        { font-size: 13px; float: left; }
 .vierkantje         { width: 30px; height: 25px; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
-.info               { height: 25px; text-align: left !important; padding-left: 10px !important; padding-right: 30px !important; padding-top: 5px !important; color: rgba(0, 0, 0, 0.7); }
+.info               { height: 25px; text-align: left !important; padding-left: 10px !important; padding-right: 25px !important; padding-top: 5px !important; color: rgba(0, 0, 0, 0.7); }
 .kalender           { margin: 10px 10px; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
 .kalender ul        { list-style-type: none; margin-left: 0 !important; }
 .maandHoofding      { padding: 10px 0; width: 100%; background: #1ca615; text-align: center; color: white; }
@@ -64,44 +112,6 @@ table               { border-collapse: collapse; }
 .bold				{ font-weight: bold; }
 .underline			{ text-decoration: underline; }
 
-#wrap               { margin: 0 auto;  /* auto zorgt ervoor dat de div gecentreerd wordt op de pagina */
-                      max-width: 1024px;
-                      background-color: #f2ffbd;
-                      overflow: hidden;
-                      min-height: 100%; /* zorgt ervoor dat de achtergrondkleur altijd tot onderaan het scherm gaat */
-                    }
-#menuBar            { clear: both; box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }
-#menuBar ul         { list-style: none; font-size: 14px; background-color: #ff7900; height: 30px; padding: 0;
-                      overflow: hidden; /* niet meer nodig als menu responsive is */
-                    }
-#menuBar li      	{ position: relative; float: left; display: block; }
-#menuIndex      	{ width: 16% }
-#menuContact      	{ width: 19% }
-#menuWiewat      	{ width: 27% }
-#menuKalender      	{ width: 22% }
-#menuFotos      	{ width: 16% }
-#menuBar li a		{ color: white;
-                      line-height: 30px; /* hierdoor wordt de tekst verticaal gecentreerd */
-                      display: block; /* hierdoor wordt heel de beschikbare ruimte gebruikt en met de achtergrondkleur opgevuld */
-                      text-decoration: none; text-align: center;
-                      border: 1px #ffa95c; border-right-style: solid;
-                      overflow: hidden; /* niet meer nodig als menu responsive is */
-}
-#menuFotos a        { border-right-style: none !important; }
-#menuBar li a:hover	{ background-color: #ffc999; color: black; }
-
-/* Hide from IE5-Mac \*/
-#menuBar li a       { float: none }
-/* End hide */
-
-#content			{ padding: 10px 20px; text-align: left; font-size: 15px; }
-#content ul         { margin-left: 20px; }
-#content ul.sublist	{ margin-top: 5px; }
-#content li         { margin-bottom: 5px; }
-/*#content img        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); }*/
-
-#footer             { clear: both; height: 20px; } /* de footer zorgt voor een mooie marge onderaan de pagina */
-
 .foto               { float: left; position: relative; width: 100%; padding-bottom: 100%; }
 .fotoInner          { position: absolute; left: 10px; right: 10px; /* top: 10px; bottom: 10px; */
                       /*overflow: hidden;*/
@@ -111,7 +121,7 @@ table               { border-collapse: collapse; }
 .google-maps        { box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28); position: relative; margin-top: 20px; padding-bottom: 50%; /* This is the aspect ratio */ height: 0; overflow: hidden; }
 .google-maps iframe { position: absolute; top: 0; left: 0; width: 100% !important; height: 100% !important; }
 
-.row::after         { content: ""; clear: both; display: table; }
+/*.row::after         { content: ""; clear: both; display: table; }*/
 
 /* For mobile phones: */
 [class*="span-"] {
@@ -119,8 +129,14 @@ table               { border-collapse: collapse; }
     width: 100%;
 }
 
-@media only screen and (min-width: 415px) {
-    /* iPhone 6 plus is 414px. Er is geen courante smartphone die breder is. */
+@media only screen and (orientation: landscape) and (max-height: 432px) {
+    /* Microsoft Lumia 1520 is 432px. Er is geen courante smartphone die breder is. (iPhone 6 plus is 414px.) */
+    #logo { width: 180px !important; }
+    #content { margin-top: 113px !important; }
+}
+
+@media only screen and (min-width: 433px) {
+    /* Microsoft Lumia 1520 is 432px. Er is geen courante smartphone die breder is. (iPhone 6 plus is 414px.) */
     .span-4 { width: 50%; }
     .span-6 { width: 50%; }
     .span-12 { width: 100%; }
@@ -135,6 +151,8 @@ table               { border-collapse: collapse; }
 
     img { margin: auto; width: 95%; }
     #menuBar li { width: 20%; }
+    #logo { width: 256px; }
+    #content { margin-top: 136px; }
 }
 
 @media only screen and (min-width: 769px) {
