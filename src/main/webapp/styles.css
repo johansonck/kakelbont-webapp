@@ -55,7 +55,7 @@ a:active			{ color:#ff7900; }
                       /*overflow: hidden; !* niet meer nodig als menu responsive is *!*/
                     }
 .actief             { background-color: #fff !important; }
-.actief a           { color: #ff7900 !important; }
+.actief a           { color: #1ca615 !important; }
 #menuBar li      	{ position: relative; float: left; display: block; background-color: #ff7900; }
 #menuIndex      	{ width: 16% }
 #menuContact      	{ width: 19% }
@@ -70,7 +70,7 @@ a:active			{ color:#ff7900; }
                       overflow: hidden; /* niet meer nodig als menu responsive is */
                     }
 #menuFotos a        { border-right-style: none !important; }
-#menuBar li a:hover	{ background-color: #ffc999; color: black; }
+#menuBar li a:hover	{ background-color: #ffc999; color: black !important; }
 
 /* Hide from IE5-Mac \*/
 #menuBar li a       { float: none }
