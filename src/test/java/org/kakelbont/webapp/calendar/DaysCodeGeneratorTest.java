@@ -40,4 +40,9 @@ public class DaysCodeGeneratorTest {
         String expected = IOUtils.toString(getClass().getResourceAsStream("/test-kalender-oktober2017-dagen.txt"));
         assertThat(actual.toString(false)).isEqualTo(expected);
     }
+
+    @Test
+    public void februari2018() {
+        new DaysCodeGenerator().generate(2018, 2, emptyList(), emptyList());
+    }
 }

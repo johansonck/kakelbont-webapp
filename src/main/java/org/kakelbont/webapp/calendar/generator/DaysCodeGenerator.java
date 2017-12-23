@@ -40,12 +40,22 @@ public class DaysCodeGenerator {
 
         int numberOfDays = firstDayOfTheMonth.getMonth().maxLength();
         for (int dayOfMonth = 1; dayOfMonth <= numberOfDays; dayOfMonth++) {
+            if (!isValidDate(firstDayOfTheMonth, dayOfMonth)) continue;
+
             LocalDate day = firstDayOfTheMonth.withDayOfMonth(dayOfMonth);
             XmlElement element = dayCodeGenerator.generate(day, determineStyle(day, feestdagen, sluitingsdagen));
             elements.add(element);
         }
 
         return elements;
+    }
+
+    private boolean isValidDate(LocalDate firstDayOfTheMonth, int newDayOfMonth) {
+        if (firstDayOfTheMonth.isLeapYear()) return true;
+
+        if (firstDayOfTheMonth.getMonthValue() == 2 && newDayOfMonth == 29) return false;
+
+        return true;
     }
 
     private Style determineStyle(LocalDate day, List<LocalDate> feestdagen, List<LocalDate> sluitingsdagen) {
