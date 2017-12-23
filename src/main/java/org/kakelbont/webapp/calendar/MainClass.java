@@ -11,8 +11,8 @@ public class MainClass {
 	public static void main(String[] args) throws Exception {
 		LocalDateFileReader reader = new LocalDateFileReader();
 		
-		List<XmlElement> list = new CalendarCodeGenerator().generate(2017, 3,
-				2018, 1, reader.readFile("/feestdagen.txt"),
+		List<XmlElement> list = new CalendarCodeGenerator().generate(2017, 12,
+				2019, 1, reader.readFile("/feestdagen.txt"),
 				reader.readFile("/verlof.txt"));
 		
 		for (XmlElement element : list) {
